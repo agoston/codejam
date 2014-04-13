@@ -107,6 +107,7 @@ public class codejam2014qp3 {
                     getResult(R, C - 1, M, mines);
                 } else {    // terminating
                     if (M == 1) {
+                        if (R < 3 || C < 3) throw new IllegalStateException();
                         mines[R - 1][C - 1] = true;
                         return;
                     }
@@ -115,6 +116,7 @@ public class codejam2014qp3 {
                         mines[r][C - 1] = true;
                         M--;
                     }
+                    if (R <= 3) throw new IllegalStateException();
                     mines[R - 1][C - 2] = true;
                     return;
                 }
@@ -127,6 +129,7 @@ public class codejam2014qp3 {
                     getResult(R - 1, C, M, mines);
                 } else {    // terminating
                     if (M == 1) {
+                        if (R < 3 || C < 3) throw new IllegalStateException();
                         mines[R - 1][C - 1] = true;
                         return;
                     }
@@ -135,6 +138,7 @@ public class codejam2014qp3 {
                         mines[R - 1][c] = true;
                         M--;
                     }
+                    if (R <= 3) throw new IllegalStateException();
                     mines[R - 2][C - 1] = true;
                     return;
                 }
@@ -164,7 +168,7 @@ public class codejam2014qp3 {
             int M = Integer.parseInt(inVal[2]);
 
             try {
-                out.println("Case #" + numTest + ": " + readLine);
+                out.println("Case #" + numTest + ":");
                 boolean[][] result = new boolean[R][C];
                 getResult(R, C, M, result);
 
