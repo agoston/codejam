@@ -2,6 +2,10 @@
 *.log
 *.num
 
+.idea
+*.iml
+target/
+
 # stuff we don't share
 *_secret*
 
