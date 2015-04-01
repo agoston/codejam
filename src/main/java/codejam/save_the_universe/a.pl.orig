@@ -1,0 +1,84 @@
+#!/usr/bin/perl -w
+
+use strict;
+use warnings;
+
+use Data::Dumper;
+
+my $pos;
+my $numeng;
+
+sub indexof {     # pass in value, array reference
+   my ( $value, $arrayref, $from ) = ( shift, shift, shift );
+   foreach my $i ( $from .. @$arrayref-1 )  {
+      return $i if $$arrayref[$i] == $value;
+   }
+   return 999999;
+}
+
+sub lookmaxpos {
+  my $l = shift;
+  my $maxpos = $pos;
+  my $retpos = 0;
+  
+  for my $acteng (0..$numeng-1) {
+    my $actpos = indexof($acteng, $l, $pos);
+    
+    if ($actpos == 999999) {
+      return 999999;
+    }
+    
+    # most a masodik fele is elorenezunk
+    for my $seceng (0..$numeng-1) {
+      my $secpos = indexof($seceng, $l, $actpos);
+  
+      if ($secpos > $maxpos) {
+        $maxpos = $secpos;
+        $retpos = $actpos;
+#        print "$acteng, $actpos, $seceng, $secpos\n";
+      }
+    }
+  }	
+  return $retpos;
+}
+
+
+my $N = <>;
+
+for (my $i = 0; $i < $N; $i++) {
+
+  my %engine;
+  my @l;
+  my $j;
+
+	my $S = <>;
+	for ($j = 0; $j < $S; $j++) {
+		my $line = <>;
+		chomp $line;
+		$engine{$line} = $j;
+	}
+
+	my $Q = <>;
+	for ($j = 0; $j < $Q; $j++) {
+	  my $line = <>;
+		chomp $line;
+		push @l, $engine{$line};
+	}
+	
+  my $ch = 0;
+	if (scalar @l > 0) {
+
+  	# beolvasas megvan
+  	$numeng = scalar keys %engine;
+    $pos = 0;
+
+    while ($pos < 999999) {
+      $pos = lookmaxpos(\@l);
+      #    print " > $pos\n";
+      $ch++;
+    }
+    $ch--;
+  }
+  
+  print "Case #".($i+1).": $ch\n";
+}

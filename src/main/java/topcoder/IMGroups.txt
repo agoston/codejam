@@ -1,0 +1,66 @@
+
+Problem Statement
+    
+Alex has a lot of contacts in his Hyper Instant Messenger (HIM), and
+therefore, it takes some time to find the right contact. HIM supports
+Contact Groups, and each contact can be placed into a group. However, HIM's
+group support is rather limited. It allows for only one of the following two
+scenarios: 1) Multiple groups, but every contact belongs to a single group,
+or 2) All contacts exist only in a global contacts list (and no groups are
+created).
+It takes Alex k seconds to find an entry in any list of k entries. If groups
+exist, HIM will first show a list of all the groups, and once a group is
+selected, a list of all contacts within that group will be displayed. If
+groups do not exist, HIM will simply show a single list containing all the
+contacts in the global list. For example, if Alex has 5 contacts in the
+global list, it will take 5 seconds to find any one of them. If Alex splits
+those contacts into two groups with 2 and 3 users each, it will first take
+him 2 seconds to find the right group, and then 2 or 3 seconds to find the
+right contact depending on which group he chooses.
+You will be given an int N representing the total number of contacts.
+Arrange the contacts optimally (either in one global contacts list or in
+several groups) such that the maximal time needed to find a contact is
+minimized. Return this time.
+Definition
+    
+Class:
+IMGroups
+Method:
+optimalTime
+Parameters:
+int
+Returns:
+int
+Method signature:
+int optimalTime(int N)
+(be sure your method is public)
+    
+
+Constraints
+-
+N will be between 1 and 1000000, inclusive.
+Examples
+0)
+
+    
+5
+Returns: 5
+The example from the problem statement.
+1)
+
+    
+6
+Returns: 5
+Alex can arrange the contacts into 2 groups with 3 contacts each. The total
+time needed to find any contact will be 2 seconds to find the right group
+plus 3 seconds to find the right contact within that group.
+2)
+
+    
+1000
+Returns: 64
+
+This problem statement is the exclusive and proprietary property of
+TopCoder, Inc. Any unauthorized use or reproduction of this information
+without the prior written consent of TopCoder, Inc. is strictly prohibited.
+(c)2003, TopCoder, Inc. All rights reserved.

@@ -1,0 +1,121 @@
+
+Problem Statement
+    
+You are given a square chessboard, and you must determine the number of ways
+you can place k bishops on the board so that no two bishops attack each
+other. Some of the cells on the board are destroyed, and a bishop cannot be
+placed on a destroyed cell. Two bishops attack each other if they are
+located on the same diagonal (even if there are destroyed cells between
+them).
+You will be given a String[] board which represents the chessboard. The jth
+character of the ith element of board represents the cell at row i, column
+j. A '.' denotes an empty cell, and a '#' denotes a destroyed cell. Return
+the last four digits of the number of ways you can place k bishops on the
+board so that no two bishops attack each other.
+Definition
+    
+Class:
+Bishops
+Method:
+count
+Parameters:
+int, String[]
+Returns:
+int
+Method signature:
+int count(int k, String[] board)
+(be sure your method is public)
+    
+
+Constraints
+-
+k will be between 0 and 64, inclusive.
+-
+board will contain between 1 and 8 elements, inclusive.
+-
+Each element of board will contain exactly n characters, where n is the
+number of elements in board.
+-
+Each character of each element of board will be either '.' or '#'.
+Examples
+0)
+
+    
+1
+{"."}
+Returns: 1
+
+1)
+
+    
+1
+{
+ "...",
+ ".##",
+ "..."}
+Returns: 7
+There are 7 free cells, and the bishop can be placed in any of those cells.
+2)
+
+    
+3
+{
+ "...",
+ "...",
+ "..."}
+Returns: 26
+
+3)
+
+    
+7
+{
+ "........",
+ "......#.",
+ "........",
+ ".#......",
+ "........",
+ ".....#..",
+ "........",
+ "...#...."}
+Returns: 5544
+
+4)
+
+    
+4
+{
+ "...",
+ ".#.",
+ "..."}
+Returns: 8
+There are two basic possible placements of 4 bishops:
+BBB  B.B
+.#.  B#B
+.B.  ...
+and the rotations of these two placements.
+5)
+
+    
+0
+{
+ "...",
+ "###",
+ "..."}
+Returns: 1
+There is exactly one way of placing 0 bishops.
+6)
+
+    
+2
+{
+ "....", 
+ "....", 
+ ".#..", 
+ "...#"}
+Returns: 71
+
+This problem statement is the exclusive and proprietary property of
+TopCoder, Inc. Any unauthorized use or reproduction of this information
+without the prior written consent of TopCoder, Inc. is strictly prohibited.
+(c)2003, TopCoder, Inc. All rights reserved.
