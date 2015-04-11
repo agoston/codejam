@@ -12,7 +12,7 @@ public class codejam2014qp2 {
 
 //    public static final String PATHNAME = "target/classes/2014qp2/B-example.in";
 //    public static final String PATHNAME = "target/classes/2014qp2/B-small-practice.in";
-    public static final String PATHNAME = "target/classes/2014qp2/B-large-practice.in";
+    public static final String PATHNAME = "target/classes/2014qp/B-large-practice.in";
 
     public static void main(String[] args) throws Exception {
         BufferedReader in = new BufferedReader(new FileReader(new File(PATHNAME)));

@@ -41,7 +41,7 @@ Speedups:
 
 public class codejam2011r2p2 {
 
-    public static final String PATHNAME = "target/classes/2011r2p1/A-large-practice.in";
+    public static final String PATHNAME = "target/classes/2011r2/A-large-practice.in";
 
     public static void main(String[] args) throws Exception {
         BufferedReader in = new BufferedReader(new FileReader(new File(PATHNAME)));

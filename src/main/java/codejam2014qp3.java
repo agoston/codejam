@@ -40,7 +40,7 @@ xxxx
 */
 public class codejam2014qp3 {
 
-    public static final String PATHNAME = "target/classes/2014qp3/A-example.in";
+    public static final String PATHNAME = "target/classes/2014qp/A-example.in";
 
     static void printMines(int R, int C, boolean[][] mines) {
         for (int r = 0; r < R; r++) {
