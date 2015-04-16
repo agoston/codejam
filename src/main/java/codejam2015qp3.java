@@ -26,7 +26,7 @@ public class codejam2015qp3 {
 
             String input = StringUtils.repeat(S, X);
 
-
+            // TODO
 
         }
     }
