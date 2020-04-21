@@ -12,9 +12,9 @@ public class codejam2015qp4 {
     public static void main(String[] args) throws Exception {
         BufferedReader in = new BufferedReader(new FileReader(new File(PATHNAME)));
         PrintStream out = new PrintStream(new File(PATHNAME.replaceFirst("\\.in", ".out")));
-        final int numTests = Integer.parseInt(in.readLine());
+        int numTests = Integer.parseInt(in.readLine());
         for (int numTest = 1; numTest <= numTests; numTest++) {
-            final String readLine = in.readLine();
+            String readLine = in.readLine();
             String[] inVal = readLine.split(" ");
 
             int X = Integer.parseInt(inVal[0]);

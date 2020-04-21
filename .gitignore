@@ -1,17 +1,6 @@
-*~
-*.log
-*.num
-
 .idea
 *.iml
 target/
+*~
 
-# stuff we don't share
-*_secret*
-
-# shit that has to be in $PATH
-chromedriver
-
-# stuff that is per-host
-sync_webplay.sh
-
+A*.out

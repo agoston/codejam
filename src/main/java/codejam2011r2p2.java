@@ -46,7 +46,7 @@ public class codejam2011r2p2 {
     public static void main(String[] args) throws Exception {
         BufferedReader in = new BufferedReader(new FileReader(new File(PATHNAME)));
         PrintStream out = new PrintStream(new File(PATHNAME.replaceFirst("\\.in", ".out")));
-        final int numTests = Integer.parseInt(in.readLine());
+        int numTests = Integer.parseInt(in.readLine());
         for (int numTest = 1; numTest <= numTests; numTest++) {
             String[] inVal = in.readLine().split(" ");
 
@@ -56,7 +56,7 @@ public class codejam2011r2p2 {
             double t = Integer.parseInt(inVal[3]); // time of running
             int N = Integer.parseInt(inVal[4]); // number of walkways
 
-            final List<WalkWay> walkWays = new ArrayList<>();
+            List<WalkWay> walkWays = new ArrayList<>();
 
             for (int i = 0; i < N; i++) {
                 inVal = in.readLine().split(" ");
