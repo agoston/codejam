@@ -4,3 +4,8 @@ target/
 *~
 
 A*.out
+
+
+# Added by cargo
+
+/target
