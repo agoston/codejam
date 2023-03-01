@@ -6,14 +6,14 @@ fn iterate(input: &String) -> String {
 
     for ch in input.chars() {
         match buf {
-            None => {
-                buf = Some(ch)
-            },
-            Some(x) => if x == ch {
-                buf = None
-            } else {
-                acc.push(x);
-                buf = Some(ch)
+            None => buf = Some(ch),
+            Some(x) => {
+                if x == ch {
+                    buf = None
+                } else {
+                    acc.push(x);
+                    buf = Some(ch)
+                }
             }
         }
     }
@@ -25,7 +25,7 @@ fn work(input: String) -> String {
     let mut original = input;
     loop {
         let munged = iterate(&original);
-        
+
         if munged.len() == original.len() {
             return munged;
         }
@@ -39,11 +39,14 @@ fn main() {
     let mut lines = stdin.lock().lines();
     let input = lines.next().unwrap().unwrap().trim().to_string();
     let result = work(input);
-    if result.is_empty() {
-        println!("Empty String");
-    } else {
-        println!("{}", result);
-    }
+    println!(
+        "{}",
+        if result.is_empty() {
+            "Empty String".to_string()
+        } else {
+            result
+        }
+    );
 }
 
 #[cfg(test)]
