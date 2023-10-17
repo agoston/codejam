@@ -48,7 +48,8 @@ mod tests {
 
     #[test]
     fn test_huge() -> Result<(), String> {
-        
+        let mut vec2: Vec<u64> = (1..20000).collect();
+        work(&vec2);
         Ok(())
     }
 }
